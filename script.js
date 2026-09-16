@@ -546,7 +546,7 @@ document.addEventListener(
         try {
 
             const endpoint =
-                "http://localhost:3000/api/youtube/download" +
+                "https://universaldownloader-3125.onrender.com/api/youtube/download" +
                 `?url=${encodeURIComponent(url)}` +
                 `&format=${encodeURIComponent(format)}`;
 
@@ -702,10 +702,10 @@ if (
     url.includes("pin.it")
 ) {
     carouselEndpoint =
-        "http://localhost:3000/api/pinterest/carousel-download";
+        "https://universaldownloader-3125.onrender.com/api/pinterest/carousel-download";
 } else {
     carouselEndpoint =
-        "http://localhost:3000/api/instagram/carousel-download";
+        "https://universaldownloader-3125.onrender.com/api/instagram/carousel-download";
 }
 
 const endpoint =
@@ -804,7 +804,7 @@ async function checkJobStatus() {
     try {
 
         const response = await fetch(
-            `http://localhost:3000/api/jobs/${currentJobId}`
+            `https://universaldownloader-3125.onrender.com/api/jobs/${currentJobId}`
         );
 
         const data = await response.json();
@@ -860,7 +860,7 @@ async function checkJobStatus() {
                 "Your job has been completed successfully.";
 
             downloadBtn.href =
-    `http://localhost:3000/api/jobs/${currentJobId}/download`;
+    `https://universaldownloader-3125.onrender.com/api/jobs/${currentJobId}/download`;
 
 downloadBtn.style.display = "inline-flex";
 
@@ -962,7 +962,7 @@ downloadBtn.style.display = "none";
         // ==================================
 
         const response = await fetch(
-            "http://localhost:3000/api/analyze",
+            "https://universaldownloader-3125.onrender.com/api/analyze",
             {
                 method: "POST",
 
@@ -1438,7 +1438,7 @@ downloadBtn.addEventListener("click", async (event) => {
     try {
 
         const response = await fetch(
-            "http://localhost:3000/api/jobs",
+            "https://universaldownloader-3125.onrender.com/api/jobs",
             {
                 method: "POST",
                 headers: {
@@ -1466,7 +1466,7 @@ downloadBtn.addEventListener("click", async (event) => {
         downloadBtn.textContent = "Processing...";
 
         const processResponse = await fetch(
-            `http://localhost:3000/api/jobs/${currentJobId}/process`,
+            `https://universaldownloader-3125.onrender.com/api/jobs/${currentJobId}/process`,
             {
                 method: "POST"
             }
@@ -1536,7 +1536,7 @@ async function loadJobHistory() {
 
     try {
         const response = await fetch(
-            "http://localhost:3000/api/jobs"
+            "https://universaldownloader-3125.onrender.com/api/jobs"
         );
 
         const data = await response.json();
