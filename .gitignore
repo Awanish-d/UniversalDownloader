@@ -1,0 +1,14 @@
+node_modules
+server/node_modules
+
+.env
+server/.env
+
+*.db
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+server/downloads/*
+media/*
+!media/.gitkeep

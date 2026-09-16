@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Universal Downloader - Analyze supported media links from one simple website.">
+
+    <title>Universal Downloader</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            Universal Downloader
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    ⚡ Fast & Simple
+                </div>
+
+                <h1>
+                    Download Your Media
+                    <span>From One Place</span>
+                </h1>
+
+                <p class="subtitle">
+                    Paste a supported media URL and analyze it in seconds.
+                </p>
+
+                <div class="download-box">
+
+                    <input
+                        type="url"
+                        id="urlInput"
+                        placeholder="Paste your video, image or media URL..."
+                        autocomplete="off"
+                    >
+
+                    <button type="button" id="analyzeBtn">
+                        Analyze
+                    </button>
+
+                </div>
+
+                <p class="supported">
+                    YouTube • Instagram • Pinterest • Facebook • TikTok
+                </p>
+
+                <div
+    class="result"
+    id="result"
+    aria-live="polite"
+>
+
+    <div class="result-header">
+
+        <div class="result-icon" id="resultIcon">
+            ✓
+        </div>
+
+        <div class="result-content">
+
+            <div
+                class="platform"
+                id="platformName"
+            >
+                MEDIA
+            </div>
+
+            <h2 id="resultTitle">
+                Media detected
+            </h2>
+
+            <p id="resultMessage">
+                Your media information will appear here.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="media-preview"
+        id="mediaPreview"
+    >
+        <div class="preview-placeholder">
+            📁
+            <span>Media Preview</span>
+        </div>
+    </div>
+
+
+    <div
+        class="media-info"
+        id="mediaInfo"
+    >
+
+        <div class="info-item">
+
+            <span>Type</span>
+
+            <strong id="mediaType">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <span>Format</span>
+
+            <strong id="mediaFormat">
+                -
+            </strong>
+
+        </div>
+
+    </div>
+
+
+   <a
+    id="downloadBtn"
+    class="download-btn"
+    href="#"
+    rel="noopener noreferrer"
+    style="display: none;"
+>
+    ⬇ Download
+</a>
+
+</div>
+        </section>
+
+
+        <section class="features">
+
+            <div class="section-heading">
+                <span>FEATURES</span>
+
+                <h2>
+                    Everything in one place
+                </h2>
+            </div>
+
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+
+                    <h3>
+                        Simple URL Input
+                    </h3>
+
+                    <p>
+                        Paste a supported media URL and start the analysis.
+                    </p>
+                </div>
+
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+
+                    <h3>
+                        Fast Processing
+                    </h3>
+
+                    <p>
+                        Designed for a quick and clean user experience.
+                    </p>
+                </div>
+
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+
+                    <h3>
+                        Mobile Friendly
+                    </h3>
+
+                    <p>
+                        Works across phones, tablets and desktop screens.
+                    </p>
+                </div>
+
+
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+
+                    <h3>
+                        Secure
+                    </h3>
+
+                    <p>
+                        URLs are validated before processing.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    
+    </main>
+
+<section class="history-section">
+    <div class="container">
+        <div class="section-title">
+            <span class="eyebrow">Your Activity</span>
+            <h2>Download History</h2>
+            <p>Your recent download jobs will appear here.</p>
+        </div>
+
+        <div id="jobHistory" class="job-history">
+            <p class="history-empty">No download jobs yet.</p>
+        </div>
+    </div>
+</section>    
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Universal Downloader
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
