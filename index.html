@@ -5,245 +5,405 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Universal Downloader - Analyze supported media links from one simple website.">
+          content="Fetchora helps you analyze supported media links from YouTube, Instagram, Pinterest, Facebook and TikTok in one clean interface.">
 
-    <title>Universal Downloader</title>
+    <meta name="theme-color" content="#0B0D12">
+
+    <title>Fetchora | Download Your Media From One Place</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="logo">
-            Universal Downloader
-        </div>
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+            <a href="#home" class="brand" aria-label="Fetchora Home">
+                <span class="brand-mark" aria-hidden="true">
+                    <span></span><span></span>
+                </span>
+                <span>Fetchora</span>
+            </a>
+
+            <div class="nav-links">
+                <a class="nav-link active" href="#home">Home</a>
+                <a class="nav-link" href="#downloader">YouTube</a>
+                <a class="nav-link" href="#platforms">Instagram</a>
+                <a class="nav-link" href="#platforms">Pinterest</a>
+                <a class="nav-link" href="#features">Tools</a>
+                <a class="nav-link" href="#faq">Blog</a>
+            </div>
+
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☾</button>
+                <a class="try-btn" href="#downloader">Try Now <span>→</span></a>
+            </div>
+        </nav>
     </header>
 
-    <main>
+    <main id="home">
 
         <section class="hero">
+            <div class="hero-glow hero-glow-one"></div>
+            <div class="hero-glow hero-glow-two"></div>
 
-            <div class="hero-content">
+            <div class="container hero-grid">
 
-                <div class="badge">
-                    ⚡ Fast & Simple
+                <div class="hero-copy">
+                    <div class="badge">⚡ Free · Fast · No Login Required</div>
+
+                    <h1>
+                        Download Videos
+                        <span>From Anywhere</span>
+                    </h1>
+
+                    <p class="subtitle">
+                        Analyze supported media links from your favorite platforms in one place.
+                        Fast, clean and easy to use.
+                    </p>
+
+                    <div class="download-box" id="downloader">
+                        <span class="input-icon" aria-hidden="true">↗</span>
+
+                        <input
+                            type="url"
+                            id="urlInput"
+                            placeholder="Paste video link here..."
+                            autocomplete="off"
+                            aria-label="Media URL"
+                        >
+
+                        <button type="button" class="paste-btn" id="pasteBtn" aria-label="Paste URL">▣</button>
+
+                        <button type="button" id="analyzeBtn" class="analyze-btn">
+                            <span>↓</span> Analyze
+                        </button>
+                    </div>
+
+                    <div class="hero-meta">
+                        <div class="supported">
+                            <span>Supports:</span>
+                            <span class="platform-chip youtube-chip"><b>▶</b> YouTube</span>
+                            <span class="platform-chip instagram-chip"><b>◎</b> Instagram</span>
+                            <span class="platform-chip pinterest-chip"><b>p</b> Pinterest</span>
+                        </div>
+
+                        <div class="safe-note">
+                            <span>✓</span> Secure URL processing
+                        </div>
+                    </div>
+
+                    <div class="result" id="result" aria-live="polite">
+                        <div class="result-header">
+                            <div class="result-icon" id="resultIcon">✓</div>
+
+                            <div class="result-content">
+                                <div class="platform" id="platformName">MEDIA</div>
+                                <h2 id="resultTitle">Media detected</h2>
+                                <p id="resultMessage">Your media information will appear here.</p>
+                            </div>
+                        </div>
+
+                        <div class="media-preview" id="mediaPreview">
+                            <div class="preview-placeholder">
+                                <span class="preview-symbol">◫</span>
+                                <span>Media Preview</span>
+                            </div>
+                        </div>
+
+                        <div class="media-info" id="mediaInfo">
+                            <div class="info-item">
+                                <span>Type</span>
+                                <strong id="mediaType">-</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <span>Format</span>
+                                <strong id="mediaFormat">-</strong>
+                            </div>
+                        </div>
+
+                        <a
+                            id="downloadBtn"
+                            class="download-btn"
+                            href="#"
+                            rel="noopener noreferrer"
+                            style="display:none;"
+                        >↓ Download</a>
+                    </div>
                 </div>
 
-                <h1>
-                    Download Your Media
-                    <span>From One Place</span>
-                </h1>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
 
-                <p class="subtitle">
-                    Paste a supported media URL and analyze it in seconds.
-                </p>
+                    <div class="floating-platform youtube-float">
+                        <span>▶</span>
+                    </div>
 
-                <div class="download-box">
+                    <div class="floating-platform instagram-float">
+                        <span>◎</span>
+                    </div>
 
-                    <input
-                        type="url"
-                        id="urlInput"
-                        placeholder="Paste your video, image or media URL..."
-                        autocomplete="off"
-                    >
+                    <div class="floating-platform pinterest-float">
+                        <span>p</span>
+                    </div>
 
-                    <button type="button" id="analyzeBtn">
-                        Analyze
-                    </button>
+                    <div class="phone phone-back">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen screen-photo">
+                            <div class="screen-gradient"></div>
+                            <div class="screen-sun"></div>
+                            <div class="screen-palm"></div>
+                        </div>
+                    </div>
 
+                    <div class="phone phone-front">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen screen-video">
+                            <div class="video-mountains"></div>
+                            <div class="play-circle">▶</div>
+                            <span class="quality-label">4K</span>
+                        </div>
+                    </div>
+
+                    <div class="save-note">Save<br>What You Love<br>Forever</div>
                 </div>
 
-                <p class="supported">
-                    YouTube • Instagram • Pinterest • Facebook • TikTok
-                </p>
-
-                <div
-    class="result"
-    id="result"
-    aria-live="polite"
->
-
-    <div class="result-header">
-
-        <div class="result-icon" id="resultIcon">
-            ✓
-        </div>
-
-        <div class="result-content">
-
-            <div
-                class="platform"
-                id="platformName"
-            >
-                MEDIA
             </div>
-
-            <h2 id="resultTitle">
-                Media detected
-            </h2>
-
-            <p id="resultMessage">
-                Your media information will appear here.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div
-        class="media-preview"
-        id="mediaPreview"
-    >
-        <div class="preview-placeholder">
-            📁
-            <span>Media Preview</span>
-        </div>
-    </div>
-
-
-    <div
-        class="media-info"
-        id="mediaInfo"
-    >
-
-        <div class="info-item">
-
-            <span>Type</span>
-
-            <strong id="mediaType">
-                -
-            </strong>
-
-        </div>
-
-
-        <div class="info-item">
-
-            <span>Format</span>
-
-            <strong id="mediaFormat">
-                -
-            </strong>
-
-        </div>
-
-    </div>
-
-
-   <a
-    id="downloadBtn"
-    class="download-btn"
-    href="#"
-    rel="noopener noreferrer"
-    style="display: none;"
->
-    ⬇ Download
-</a>
-
-</div>
         </section>
 
+        <section class="trust-strip">
+            <div class="container trust-grid">
+                <div class="trust-item">
+                    <span class="trust-icon violet">ϟ</span>
+                    <div><strong>Fast Processing</strong><small>Quick media analysis</small></div>
+                </div>
 
-        <section class="features">
+                <div class="trust-item">
+                    <span class="trust-icon green">✓</span>
+                    <div><strong>No Login Required</strong><small>Start without an account</small></div>
+                </div>
 
-            <div class="section-heading">
-                <span>FEATURES</span>
+                <div class="trust-item">
+                    <span class="trust-icon blue">∞</span>
+                    <div><strong>Quality Options</strong><small>Use available formats</small></div>
+                </div>
 
-                <h2>
-                    Everything in one place
-                </h2>
+                <div class="trust-item">
+                    <span class="trust-icon purple">▣</span>
+                    <div><strong>Privacy Focused</strong><small>Secure URL handling</small></div>
+                </div>
             </div>
-
-
-            <div class="feature-grid">
-
-                <div class="feature-card">
-                    <div class="feature-icon">🔗</div>
-
-                    <h3>
-                        Simple URL Input
-                    </h3>
-
-                    <p>
-                        Paste a supported media URL and start the analysis.
-                    </p>
-                </div>
-
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-
-                    <h3>
-                        Fast Processing
-                    </h3>
-
-                    <p>
-                        Designed for a quick and clean user experience.
-                    </p>
-                </div>
-
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-
-                    <h3>
-                        Mobile Friendly
-                    </h3>
-
-                    <p>
-                        Works across phones, tablets and desktop screens.
-                    </p>
-                </div>
-
-
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-
-                    <h3>
-                        Secure
-                    </h3>
-
-                    <p>
-                        URLs are validated before processing.
-                    </p>
-                </div>
-
-            </div>
-
         </section>
 
-    
+        <section class="section platforms-section" id="platforms">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">SUPPORTED PLATFORMS</span>
+                    <h2>Supported <span>Platforms</span></h2>
+                    <p>Use supported public media links from the platforms below.</p>
+                </div>
+
+                <div class="platform-grid">
+                    <article class="platform-card">
+                        <div class="platform-logo youtube-logo">▶</div>
+                        <div>
+                            <h3>YouTube</h3>
+                            <p>Videos, Shorts and supported media.</p>
+                        </div>
+                        <span class="card-arrow">→</span>
+                    </article>
+
+                    <article class="platform-card">
+                        <div class="platform-logo instagram-logo">◎</div>
+                        <div>
+                            <h3>Instagram</h3>
+                            <p>Supported public posts and reels.</p>
+                        </div>
+                        <span class="card-arrow">→</span>
+                    </article>
+
+                    <article class="platform-card">
+                        <div class="platform-logo pinterest-logo">p</div>
+                        <div>
+                            <h3>Pinterest</h3>
+                            <p>Supported video pins and images.</p>
+                        </div>
+                        <span class="card-arrow">→</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section how-section" id="features">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">HOW IT WORKS</span>
+                    <h2>Simple as <span>1 · 2 · 3</span></h2>
+                    <p>Analyze supported media in a few straightforward steps.</p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">↗</div>
+                        <h3>Copy Link</h3>
+                        <p>Copy the supported media URL from the source platform.</p>
+                    </div>
+
+                    <div class="step-arrow">→</div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">▣</div>
+                        <h3>Paste Link</h3>
+                        <p>Paste the URL into the Fetchora downloader above.</p>
+                    </div>
+
+                    <div class="step-arrow">→</div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">↓</div>
+                        <h3>Download</h3>
+                        <p>Review the available media options and download.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <div>
+                        <span class="mini-badge">● Always Free</span>
+                        <h2>Save Content, Anytime, Anywhere</h2>
+                        <p>No registration required. Use Fetchora for supported media links.</p>
+                    </div>
+
+                    <a href="#downloader" class="cta-button">Start Downloading Now <span>→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container stats-grid">
+                <div class="stat"><span class="stat-icon">ϟ</span><strong>Fast</strong><small>Simple workflow</small></div>
+                <div class="stat"><span class="stat-icon">↓</span><strong>Multiple</strong><small>Supported platforms</small></div>
+                <div class="stat"><span class="stat-icon">✦</span><strong>Quality</strong><small>Available formats</small></div>
+                <div class="stat"><span class="stat-icon">✓</span><strong>Privacy</strong><small>Security focused</small></div>
+            </div>
+        </section>
+
+        <section class="section faq-section" id="faq">
+            <div class="container faq-layout">
+                <div>
+                    <div class="section-heading left">
+                        <span class="eyebrow">FAQ</span>
+                        <h2>Frequently Asked <span>Questions</span></h2>
+                        <p>Quick answers about using Fetchora.</p>
+                    </div>
+
+                    <div class="faq-list">
+                        <details>
+                            <summary>Is Fetchora free to use?</summary>
+                            <p>Fetchora is designed around a simple free-to-use experience for supported media analysis and downloads.</p>
+                        </details>
+
+                        <details>
+                            <summary>Do I need to create an account?</summary>
+                            <p>No account is required for the basic downloader flow.</p>
+                        </details>
+
+                        <details>
+                            <summary>What media quality is supported?</summary>
+                            <p>Available quality and formats depend on the source and the supported provider response.</p>
+                        </details>
+
+                        <details>
+                            <summary>Is it safe to use?</summary>
+                            <p>Only submit URLs you are authorized to access and download. Fetchora validates and processes supported links through its backend.</p>
+                        </details>
+
+                        <details>
+                            <summary>Can I download private videos?</summary>
+                            <p>Private, restricted or protected content is not supported.</p>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="faq-card">
+                    <div class="quote-mark">✦</div>
+                    <h3>Built for a cleaner download workflow.</h3>
+                    <p>One URL box, supported platforms, clear results and no unnecessary steps.</p>
+                    <div class="faq-card-line"></div>
+                    <span>Fetchora</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="eyebrow">YOUR ACTIVITY</span>
+                    <h2>Download History</h2>
+                    <p>Your recent download jobs will appear here.</p>
+                </div>
+
+                <div id="jobHistory" class="job-history">
+                    <p class="history-empty">No download jobs yet.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-<section class="history-section">
-    <div class="container">
-        <div class="section-title">
-            <span class="eyebrow">Your Activity</span>
-            <h2>Download History</h2>
-            <p>Your recent download jobs will appear here.</p>
-        </div>
-
-        <div id="jobHistory" class="job-history">
-            <p class="history-empty">No download jobs yet.</p>
-        </div>
-    </div>
-</section>    
-
     <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#home" class="brand">
+                    <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
+                    <span>Fetchora</span>
+                </a>
+                <p>Save what you love. Simple. Fast. Always free.</p>
+            </div>
 
-    <p>
-        © 2026 Universal Downloader
-    </p>
+            <div class="footer-links">
+                <div>
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#downloader">Downloader</a>
+                    <a href="#platforms">Platforms</a>
+                    <a href="#faq">FAQ</a>
+                </div>
 
-    <p>
-        <a href="privacy.html">Privacy Policy</a>
-    </p>
+                <div>
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="dmca.html">DMCA</a>
+                    <a href="about.html">About</a>
+                </div>
 
-</footer>
+                <div>
+                    <h4>Follow</h4>
+                    <div class="socials">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="Instagram">◎</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                        <a href="#" aria-label="Pinterest">p</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <span>© 2026 Fetchora. All rights reserved.</span>
+            <span>Made for creators <b>♥</b></span>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
-
 </body>
 </html>
