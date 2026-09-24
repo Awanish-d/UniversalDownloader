@@ -4,14 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Fetchora helps you analyze supported media links from YouTube, Instagram, Pinterest, Facebook and TikTok in one clean interface.">
+    <meta name="google-site-verification" content="0iButMSmdtgct7yEguefsp52XJK9R29GRCuL3vL0PDs">
 
-    <meta name="theme-color" content="#0B0D12">
+   <meta name="description"
+      content="Fetchora is a fast and simple media downloader for supported public links from YouTube, Instagram and Pinterest. No login required.">
 
-    <title>Fetchora | Download Your Media From One Place</title>
+<meta name="robots"
+      content="index, follow, max-image-preview:large">
+
+<meta name="author"
+      content="Fetchora">
+
+<meta name="theme-color"
+      content="#0B0D12">
+      <link rel="icon" href="favicon.svg" type="image/svg+xml">
+      <link rel="apple-touch-icon" href="favicon.svg">
+
+<link rel="canonical"
+      href="https://universal-downloade.vercel.app/">
+
+<title>Fetchora | Free Video Downloader for YouTube, Instagram & Pinterest</title>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fetchora">
+<meta property="og:title"
+      content="Fetchora | Free Video Downloader">
+<meta property="og:description"
+      content="Download supported public media from YouTube, Instagram and Pinterest with Fetchora. Fast, simple and no login required.">
+<meta property="og:url"
+      content="https://universal-downloade.vercel.app/">
+<meta property="og:image"
+      content="https://universal-downloade.vercel.app/og-image.png">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title"
+      content="Fetchora | Free Video Downloader">
+<meta name="twitter:description"
+      content="Download supported public media from YouTube, Instagram and Pinterest with Fetchora.">
+<meta name="twitter:image"
+      content="https://universal-downloade.vercel.app/og-image.png">
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Fetchora",
+  "url": "https://universal-downloade.vercel.app/",
+  "description": "Fetchora is a fast and simple media downloader for supported public links from YouTube, Instagram and Pinterest.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Fetchora free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fetchora is designed around a simple free-to-use experience for supported media analysis and downloads."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to create an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No account is required for the basic downloader flow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What media quality is supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Available quality and formats depend on the source and the supported provider response."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only submit URLs you are authorized to access and download. Fetchora validates and processes supported links through its backend."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I download private videos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Private, restricted or protected content is not supported."
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
@@ -26,17 +129,95 @@
             </a>
 
             <div class="nav-links">
-                <a class="nav-link active" href="#home">Home</a>
-                <a class="nav-link" href="#downloader">YouTube</a>
-                <a class="nav-link" href="#platforms">Instagram</a>
-                <a class="nav-link" href="#platforms">Pinterest</a>
-                <a class="nav-link" href="#features">Tools</a>
-                <a class="nav-link" href="#faq">Blog</a>
-            </div>
+
+    <a class="nav-link" href="#home">Home</a>
+
+    <a class="nav-link" href="#platforms">
+        Platforms
+    </a>
+
+    <a class="nav-link" href="#features">
+        How It Works
+    </a>
+
+    <a class="nav-link" href="#faq">
+        FAQ
+    </a>
+
+</div>
 
             <div class="nav-actions">
                 <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☾</button>
-                <a class="try-btn" href="#downloader">Try Now <span>→</span></a>
+                <div class="download-menu-wrapper">
+
+    <button
+        type="button"
+        class="download-menu-btn"
+        id="downloadMenuBtn"
+        aria-expanded="false"
+        aria-controls="downloadPlatformMenu"
+    >
+        <span>Download</span>
+        <span class="download-menu-arrow">⌄</span>
+    </button>
+
+    <div
+        class="download-platform-menu"
+        id="downloadPlatformMenu"
+    >
+
+        <div class="download-menu-title">
+            Choose Platform
+        </div>
+
+        <button
+            type="button"
+            class="platform-menu-item youtube"
+            data-platform="youtube"
+        >
+            <span class="menu-platform-icon">▶</span>
+
+            <span class="menu-platform-info">
+                <strong>YouTube</strong>
+                <small>Videos & Shorts</small>
+            </span>
+
+            <span class="menu-platform-arrow">→</span>
+        </button>
+
+        <button
+            type="button"
+            class="platform-menu-item instagram"
+            data-platform="instagram"
+        >
+            <span class="menu-platform-icon">◎</span>
+
+            <span class="menu-platform-info">
+                <strong>Instagram</strong>
+                <small>Posts & Reels</small>
+            </span>
+
+            <span class="menu-platform-arrow">→</span>
+        </button>
+
+        <button
+            type="button"
+            class="platform-menu-item pinterest"
+            data-platform="pinterest"
+        >
+            <span class="menu-platform-icon">p</span>
+
+            <span class="menu-platform-info">
+                <strong>Pinterest</strong>
+                <small>Videos & Images</small>
+            </span>
+
+            <span class="menu-platform-arrow">→</span>
+        </button>
+
+    </div>
+
+</div>
             </div>
         </nav>
     </header>
@@ -53,15 +234,14 @@
                     <div class="badge">⚡ Free · Fast · No Login Required</div>
 
                     <h1>
-                        Download Videos
-                        <span>From Anywhere</span>
-                    </h1>
+    Free Video Downloader
+    <span>for YouTube, Instagram & Pinterest</span>
+</h1>
 
-                    <p class="subtitle">
-                        Analyze supported media links from your favorite platforms in one place.
-                        Fast, clean and easy to use.
-                    </p>
-
+                <p class="subtitle">
+    Download supported videos and media from YouTube, Instagram and Pinterest.
+    Fast, simple and no login required.
+</p>
                     <div class="download-box" id="downloader">
                         <span class="input-icon" aria-hidden="true">↗</span>
 
@@ -73,8 +253,15 @@
                             aria-label="Media URL"
                         >
 
-                        <button type="button" class="paste-btn" id="pasteBtn" aria-label="Paste URL">▣</button>
-
+                        <button
+    type="button"
+    class="paste-btn"
+    id="pasteBtn"
+    aria-label="Paste URL"
+>
+    <span class="paste-icon">▣</span>
+    <span class="paste-label">Paste</span>
+</button>
                         <button type="button" id="analyzeBtn" class="analyze-btn">
                             <span>↓</span> Analyze
                         </button>
@@ -202,7 +389,9 @@
                 <div class="section-heading">
                     <span class="eyebrow">SUPPORTED PLATFORMS</span>
                     <h2>Supported <span>Platforms</span></h2>
-                    <p>Use supported public media links from the platforms below.</p>
+                   <p>
+    Download supported public videos and media from YouTube, Instagram and Pinterest.
+</p>
                 </div>
 
                 <div class="platform-grid">
@@ -245,31 +434,160 @@
                 </div>
 
                 <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-icon">↗</div>
-                        <h3>Copy Link</h3>
-                        <p>Copy the supported media URL from the source platform.</p>
-                    </div>
 
-                    <div class="step-arrow">→</div>
+    <!-- STEP 1 -->
+    <div class="step">
+        <div class="step-number">1</div>
 
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-icon">▣</div>
-                        <h3>Paste Link</h3>
-                        <p>Paste the URL into the Fetchora downloader above.</p>
-                    </div>
+        <h3>Copy Link</h3>
 
-                    <div class="step-arrow">→</div>
+        <p>
+            Copy the supported media URL
+            from the source platform.
+        </p>
 
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-icon">↓</div>
-                        <h3>Download</h3>
-                        <p>Review the available media options and download.</p>
-                    </div>
+        <div class="step-visual copy-visual">
+
+            <div class="mock-phone">
+
+                <div class="mock-phone-top">
+                    <span class="mock-brand">
+                        <b>▶</b> YouTube
+                    </span>
+
+                    <span>⋮</span>
                 </div>
+
+                <div class="mock-video">
+                    <span class="mock-play">▶</span>
+                </div>
+
+                <div class="mock-share">
+
+                    <span class="share-title">
+                        Share
+                    </span>
+
+                    <div class="share-options">
+
+                        <div class="share-option active">
+                            <span>▣</span>
+                            <small>Copy link</small>
+                        </div>
+
+                        <div class="share-option">
+                            <span>●</span>
+                            <small>WhatsApp</small>
+                        </div>
+
+                        <div class="share-option">
+                            <span>f</span>
+                            <small>Facebook</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ARROW -->
+    <div class="step-arrow">→</div>
+
+
+    <!-- STEP 2 -->
+    <div class="step">
+        <div class="step-number">2</div>
+
+        <h3>Paste Link</h3>
+
+        <p>
+            Paste the URL into the
+            Fetchora downloader above.
+        </p>
+
+        <div class="step-visual paste-visual">
+
+            <div class="mock-downloader">
+
+                <div class="mock-input">
+                    <span>↗</span>
+                    <span class="mock-placeholder">
+                        Paste video link here...
+                    </span>
+                </div>
+
+                <div class="mock-analyze">
+                    ↓ &nbsp; Analyze
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ARROW -->
+    <div class="step-arrow">→</div>
+
+
+    <!-- STEP 3 -->
+    <div class="step">
+        <div class="step-number">3</div>
+
+        <h3>Download</h3>
+
+        <p>
+            Review the available media
+            options and download your file.
+        </p>
+
+        <div class="step-visual download-visual">
+
+            <div class="mock-result">
+
+                <div class="mock-preview">
+                    <span class="mock-play">▶</span>
+                </div>
+
+                <div class="quality-row active">
+                    <div>
+                        <strong>1080p</strong>
+                        <small>MP4 · HD</small>
+                    </div>
+
+                    <button>↓ Download</button>
+                </div>
+
+                <div class="quality-row">
+                    <div>
+                        <strong>720p</strong>
+                        <small>MP4</small>
+                    </div>
+
+                    <button>↓ Download</button>
+                </div>
+
+                <div class="quality-row">
+                    <div>
+                        <strong>360p</strong>
+                        <small>MP4</small>
+                    </div>
+
+                    <button>↓ Download</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</div>
             </div>
         </section>
 
