@@ -1,14 +1,14 @@
-node_modules
-server/node_modules
+node_modules/
+**/node_modules/
 
 .env
-server/.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
 
-*.db
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal
 
-server/downloads/*
-media/*
-!media/.gitkeep
+server/downloads/

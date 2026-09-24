@@ -1641,3 +1641,271 @@ function detectPlatformFromURL(url) {
 
 loadJobHistory();
     
+/* ================================
+   THEME SWITCH
+   ================================ */
+
+const themeToggle = document.getElementById("themeToggle");
+
+if (themeToggle) {
+
+    const savedTheme = localStorage.getItem("fetchora-theme");
+
+    const systemTheme =
+        window.matchMedia("(prefers-color-scheme: light)")
+            .matches
+            ? "light"
+            : "dark";
+
+    const initialTheme =
+        savedTheme || systemTheme;
+
+    document.documentElement.dataset.theme =
+        initialTheme;
+
+    document.documentElement.classList.add(
+        "theme-ready"
+    );
+
+    function updateThemeButton(theme) {
+
+        themeToggle.setAttribute(
+            "aria-label",
+            theme === "light"
+                ? "Switch to dark mode"
+                : "Switch to light mode"
+        );
+
+    }
+
+    updateThemeButton(initialTheme);
+
+    themeToggle.addEventListener("click", () => {
+
+        const currentTheme =
+            document.documentElement.dataset.theme;
+
+        const newTheme =
+            currentTheme === "light"
+                ? "dark"
+                : "light";
+
+        document.documentElement.dataset.theme =
+            newTheme;
+
+        document.documentElement.classList.add(
+            "theme-ready"
+        );
+
+        localStorage.setItem(
+            "fetchora-theme",
+            newTheme
+        );
+
+        updateThemeButton(newTheme);
+
+    });
+
+}
+
+/* =========================================
+   DOWNLOAD PLATFORM MENU
+   ========================================= */
+
+const downloadMenuBtn =
+    document.getElementById("downloadMenuBtn");
+
+const downloadMenuWrapper =
+    document.querySelector(".download-menu-wrapper");
+
+const downloadPlatformMenu =
+    document.getElementById("downloadPlatformMenu");
+
+
+if (
+    downloadMenuBtn &&
+    downloadMenuWrapper &&
+    downloadPlatformMenu
+) {
+
+    /* OPEN / CLOSE */
+
+    downloadMenuBtn.addEventListener("click", (event) => {
+
+        event.stopPropagation();
+
+        const isOpen =
+            downloadMenuWrapper.classList.contains("open");
+
+        downloadMenuWrapper.classList.toggle(
+            "open",
+            !isOpen
+        );
+
+        downloadMenuBtn.setAttribute(
+            "aria-expanded",
+            String(!isOpen)
+        );
+
+    });
+
+
+    /* PLATFORM SELECT */
+
+    downloadPlatformMenu.addEventListener(
+        "click",
+        (event) => {
+
+            const platformButton =
+                event.target.closest(
+                    ".platform-menu-item"
+                );
+
+            if (!platformButton) {
+                return;
+            }
+
+            const platform =
+                platformButton.dataset.platform;
+
+            /* Close menu */
+
+            downloadMenuWrapper.classList.remove(
+                "open"
+            );
+
+            downloadMenuBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+
+            /* Scroll to downloader */
+
+            const downloader =
+                document.getElementById(
+                    "downloader"
+                );
+
+            if (downloader) {
+
+                downloader.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }
+
+
+            /* Focus URL input */
+
+            setTimeout(() => {
+
+                const urlInput =
+                    document.getElementById(
+                        "urlInput"
+                    );
+
+                if (urlInput) {
+                    urlInput.focus();
+                }
+
+            }, 450);
+
+
+            /* Platform-specific placeholder */
+
+            const urlInput =
+                document.getElementById(
+                    "urlInput"
+                );
+
+            if (urlInput) {
+
+                const placeholders = {
+
+                    youtube:
+                        "Paste YouTube video link here...",
+
+                    instagram:
+                        "Paste Instagram post or reel link here...",
+
+                    pinterest:
+                        "Paste Pinterest link here..."
+
+                };
+
+                urlInput.placeholder =
+                    placeholders[platform] ||
+                    "Paste video link here...";
+
+            }
+
+        }
+    );
+
+
+    /* CLOSE WHEN CLICKING OUTSIDE */
+
+    document.addEventListener(
+        "click",
+        (event) => {
+
+            if (
+                !downloadMenuWrapper.contains(
+                    event.target
+                )
+            ) {
+
+                downloadMenuWrapper.classList.remove(
+                    "open"
+                );
+
+                downloadMenuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+// ------------------------------------
+// Navbar Active Section
+// ------------------------------------
+
+const navLinks = document.querySelectorAll(".nav-link");
+
+const navSections = [
+    document.getElementById("home"),
+    document.getElementById("platforms"),
+    document.getElementById("features"),
+    document.getElementById("faq")
+].filter(Boolean);
+
+function updateActiveNav() {
+    const scrollPosition = window.scrollY + 180;
+
+    let currentSection = navSections[0];
+
+    navSections.forEach((section) => {
+        if (section.offsetTop <= scrollPosition) {
+            currentSection = section;
+        }
+    });
+
+    navLinks.forEach((link) => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === `#${currentSection.id}`) {
+            link.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", updateActiveNav, { passive: true });
+
+updateActiveNav();
