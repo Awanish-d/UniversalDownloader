@@ -2265,3 +2265,96 @@ html[data-theme="light"] .nav-link.active {
     box-shadow:
         inset 0 0 0 1px rgba(108,75,244,.20);
 }
+
+/* =========================================
+   HOW IT WORKS - MOBILE RESPONSIVE FIX
+========================================= */
+
+@media (max-width: 768px) {
+
+    .steps {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        width: 100%;
+    }
+
+    .step {
+        width: 100%;
+        min-width: 0;
+        text-align: center;
+    }
+
+    .step p {
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .step-arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(90deg);
+        height: 24px;
+        margin: 0;
+    }
+
+    .copy-visual,
+    .paste-visual,
+    .download-visual {
+        width: min(100%, 280px);
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+    }
+
+    .mock-phone,
+    .mock-downloader,
+    .mock-result {
+        max-width: 100%;
+    }
+
+    .mock-input,
+    .mock-analyze,
+    .mock-preview,
+    .quality-row {
+        max-width: 100%;
+    }
+
+}
+
+
+/* Smaller phones */
+@media (max-width: 480px) {
+
+    .steps {
+        gap: 18px;
+    }
+
+    .step {
+        padding: 0 4px;
+    }
+
+    .step h3 {
+        font-size: 20px;
+    }
+
+    .step p {
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 290px;
+    }
+
+    .copy-visual,
+    .paste-visual,
+    .download-visual {
+        width: min(100%, 250px);
+        max-width: 250px;
+    }
+
+    .step-arrow {
+        font-size: 24px;
+    }
+
+}
