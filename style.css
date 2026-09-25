@@ -2358,3 +2358,27 @@ html[data-theme="light"] .nav-link.active {
     }
 
 }
+
+/* Developer Credit */
+
+.developer-credit {
+    color: var(--muted);
+}
+
+.developer-credit a {
+    color: var(--text);
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.developer-credit a:hover {
+    color: var(--primary);
+}
+
+html[data-theme="light"] .developer-credit a {
+    color: #151722;
+}
+
+html[data-theme="light"] .developer-credit a:hover {
+    color: var(--primary);
+}
